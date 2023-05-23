@@ -1,0 +1,16 @@
+# docker-compose.yml
+
+version: "3"
+
+services:
+  front-end:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: conectdb
+    restart: always
+    volumes:
+      - ./:/backend
+      - /backend/node_modules
+    ports:
+      - 5050:5050
